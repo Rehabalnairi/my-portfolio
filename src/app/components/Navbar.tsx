@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { JSX } from "react/jsx-runtime";
 
 type Card = {
   title: string;
