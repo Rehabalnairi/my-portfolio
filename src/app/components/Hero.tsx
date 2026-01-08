@@ -12,8 +12,11 @@ const words = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true); 
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
     }, 2500);
@@ -29,20 +32,22 @@ export default function Hero() {
         <h1 className="font-poppins font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight">
           Hi, I’m Rehab Alnairi
           <br />
-          <span
-            key={index}
-            className="
-              inline-block mt-2
-              text-sm sm:text-base md:text-lg
-              italic
-              bg-gradient-to-r from-[#FACC15] to-[#FFE066]
-              bg-clip-text text-transparent
-              animate-text-slide
-              drop-shadow-[0_0_20px_rgba(250,204,21,0.45)]
-            "
-          >
-            {words[index]}
-          </span>
+          {mounted && (
+            <span
+              key={index}
+              className="
+                inline-block mt-2
+                text-sm sm:text-base md:text-lg
+                italic
+                bg-gradient-to-r from-[#FACC15] to-[#FFE066]
+                bg-clip-text text-transparent
+                animate-text-slide
+                drop-shadow-[0_0_20px_rgba(250,204,21,0.45)]
+              "
+            >
+              {words[index]}
+            </span>
+          )}
         </h1>
 
         <p className="mt-6 max-w-2xl font-inter text-base sm:text-lg md:text-xl text-gray-300 italic leading-relaxed">
