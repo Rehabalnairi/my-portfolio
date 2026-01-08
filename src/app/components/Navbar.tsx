@@ -131,7 +131,7 @@ export default function Navbar() {
   ];
 
   return (
-  <div className="fixed top-[60%] left-1/2 -translate-x-1/2 z-50 flex justify-center items-start gap-3 px-2 flex-wrap sm:flex-nowrap">
+  <div className="fixed top-[50%] left-1/2 -translate-x-1/2 z-50 flex justify-center items-start gap-3 px-2 flex-wrap sm:flex-nowrap">
   {cards.map((card, i) => (
     <div
       key={i}
