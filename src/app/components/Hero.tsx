@@ -28,7 +28,8 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden bg-[#020617] text-white">
       <StarBackground />
 
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-start px-6 pt-25 text-center">
+
         <h1 className="font-poppins font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight">
           Hi, I’m Rehab Alnairi
           <br />
