@@ -51,7 +51,7 @@ export default function Navbar() {
       title: "Skills",
       emoji: "🛠",
       content: (
-        <div className="flex flex-col gap-2 max-h-60 overflow-hidden"> {/* هنا overflow-hidden لإخفاء السكولر */}
+        <div className="flex flex-col gap-2 max-h-60 overflow-hidden"> 
           <div>
             <h3 className="text-[#FACC15] font-semibold mb-1">Frontend</h3>
             <div className="flex flex-wrap gap-1">
@@ -125,15 +125,10 @@ export default function Navbar() {
   ];
 
   return (
-    <div
-      className="
-        fixed
-        top-[50%] left-1/2 -translate-x-1/2
-        z-50
-        flex justify-center items-start gap-2 sm:gap-3
-        px-2
-      "
-    >
+   <div
+  className="fixed top-[50%] left-1/2 -translate-x-1/2 z-50 flex justify-center items-start gap-2 sm:gap-3 px-2"
+>
+
       {cards.map((card, i) => (
         <div
           key={i}
@@ -145,15 +140,24 @@ export default function Navbar() {
             {card.emoji}
           </button>
 
-          <div
-            className={`absolute top-14 sm:top-20 left-1/2 -translate-x-1/2
-              w-60 sm:w-72
-              bg-white/10 backdrop-blur-xl border border-white/20
-              rounded-2xl p-3 sm:p-5 shadow-xl text-white
-              transition-all duration-300
-              ${openIndex === i ? "opacity-100 scale-100 max-h-[60vh] overflow-hidden" : "opacity-0 scale-95 max-h-0 overflow-hidden"}
-            `}
-          >
+   <div
+  className={`
+    static sm:absolute
+    mt-3 sm:mt-0
+    sm:top-20
+    left-1/2 sm:-translate-x-1/2
+    w-60 sm:w-72
+    bg-white/10 backdrop-blur-xl border border-white/20
+    rounded-2xl p-3 sm:p-5 shadow-xl text-white
+    transition-all duration-300
+    ${
+      openIndex === i
+        ? "opacity-100 scale-100 max-h-[60vh]"
+        : "opacity-0 scale-95 max-h-0 overflow-hidden"
+    }
+  `}
+>
+
             <h3 className="font-poppins font-bold text-sm sm:text-lg mb-2 text-[#FACC15]">
               {card.title}
             </h3>
