@@ -5,9 +5,10 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 type Card = {
   title: string;
-  content: JSX.Element;
+  content: React.ReactNode;
   emoji: string;
 };
+
 
 export default function Navbar() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
