@@ -5,9 +5,10 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 type Card = {
   title: string;
-  content: JSX.Element;
+  content: React.ReactNode;
   emoji: string;
 };
+
 
 export default function Navbar() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -141,28 +142,25 @@ export default function Navbar() {
           </button>
 
    <div
-  className={`
-    static sm:absolute
-    mt-3 sm:mt-0
-    sm:top-20
-    left-1/2 sm:-translate-x-1/2
-    w-60 sm:w-72
-    bg-white/10 backdrop-blur-xl border border-white/20
-    rounded-2xl p-3 sm:p-5 shadow-xl text-white
+
+  className={`absolute top-14 sm:top-20 left-1/2 -translate-x-1/2
+    w-[90vw] sm:w-72 max-w-sm
+    bg-[#020617] border border-[#FACC15]/30
+    rounded-2xl p-4 sm:p-5 shadow-xl text-white
     transition-all duration-300
     ${
       openIndex === i
-        ? "opacity-100 scale-100 max-h-[60vh]"
+        ? "opacity-100 scale-100 max-h-[70vh]"
         : "opacity-0 scale-95 max-h-0 overflow-hidden"
     }
   `}
 >
+  <h3 className="font-poppins font-bold text-sm sm:text-lg mb-2 text-[#FACC15]">
+    {card.title}
+  </h3>
+  {card.content}
+</div>
 
-            <h3 className="font-poppins font-bold text-sm sm:text-lg mb-2 text-[#FACC15]">
-              {card.title}
-            </h3>
-            {card.content}
-          </div>
         </div>
       ))}
     </div>
